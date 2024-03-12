@@ -46,7 +46,7 @@ Configure the application by setting the following environment variables in your
 To build the Docker image for the application, run:
 
 ```bash
-docker build -t wmt-sujith-surendran-file-metadata .
+docker build -t file-metadata .
 ```
 
 ### Running the Application
@@ -54,16 +54,16 @@ docker build -t wmt-sujith-surendran-file-metadata .
 To run the application in a Docker container:
 
 ```bash
-docker run -p 5000:5000 wmt-sujith-surendran-file-metadata
+docker run -p 5000:5000 file-metadata
 ```
 
 This command runs the Flask application inside a Docker container and makes it accessible at `http://localhost:5000`.  Also, it performs an initial download of the metadata and stores it within the volume as interview.csv.  To download the file into your local folder run the below given command
 
 ```bash
-docker ps | grep "wmt-sujith"
+docker ps | grep "sujith"
 # This will help you get the running docker container id. Result will look similar to 
-# CONTAINER ID   IMAGE                                      COMMAND                  CREATED          STATUS          PORTS                    NAMES
-# 29d03370caa6   wmt-sujith-surendran-file-metadata:0.0.1   "/app/start_and_down…"   20 minutes ago   Up 20 minutes   0.0.0.0:5000->5000/tcp   jovial_buck
+# CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS                    NAMES
+# 29d03370caa6   file-metadata:0.0.1   "/app/start_and_down…"   20 minutes ago   Up 20 minutes   0.0.0.0:5000->5000/tcp   jovial_buck
 #
 # Next run the below command to copy interview.csv to local folder
 docker cp <container_id>:/app/interview.csv </path/to/your/local/folder>
