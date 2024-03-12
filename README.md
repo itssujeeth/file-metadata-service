@@ -60,7 +60,7 @@ docker run -p 5000:5000 file-metadata
 This command runs the Flask application inside a Docker container and makes it accessible at `http://localhost:5000`.  Also, it performs an initial download of the metadata and stores it within the volume as interview.csv.  To download the file into your local folder run the below given command
 
 ```bash
-docker ps | grep "sujith"
+docker ps | grep "file"
 # This will help you get the running docker container id. Result will look similar to 
 # CONTAINER ID   IMAGE                 COMMAND                  CREATED          STATUS          PORTS                    NAMES
 # 29d03370caa6   file-metadata:0.0.1   "/app/start_and_down…"   20 minutes ago   Up 20 minutes   0.0.0.0:5000->5000/tcp   jovial_buck
